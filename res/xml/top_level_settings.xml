@@ -200,6 +200,24 @@
             settings:controller="com.android.settings.privacy.TopLevelPrivacyEntryPreferenceController"/>
 
         <com.android.settings.widget.HomepagePreference
+            android:fragment="com.crdroid.settings.fragments.misc.PlayIntegrityFix"
+            android:icon="@drawable/ic_fingerprint"
+            android:key="top_level_play_integrity_fix"
+            android:order="-26"
+            android:title="@string/play_integrity_fix_title"
+            android:summary="@string/play_integrity_fix_summary"
+            settings:highlightableMenuKey="@string/menu_key_play_integrity_fix"/>
+
+        <com.android.settings.widget.HomepagePreference
+            android:fragment="com.crdroid.settings.fragments.misc.TrickyStore"
+            android:icon="@drawable/ic_vpn_key"
+            android:key="top_level_tricky_store"
+            android:order="-24"
+            android:title="@string/tricky_store_title"
+            android:summary="@string/tricky_store_summary"
+            settings:highlightableMenuKey="@string/menu_key_tricky_store"/>
+
+        <com.android.settings.widget.HomepagePreference
             android:fragment="com.android.settings.location.LocationSettings"
             android:icon="@drawable/ic_settings_location_filled"
             android:key="top_level_location"
