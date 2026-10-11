@@ -70,7 +70,7 @@ public class DuressPasswordSetupActivity extends DuressPasswordActivity
         setContentView(R.layout.duress_password_setup);
 
         GlifLayout layout = requireViewById(R.id.glif_layout);
-        int headerText = getIntent().getExtras().getNumber(EXTRA_TITLE_TEXT);
+        int headerText = getIntent().getIntExtra(EXTRA_TITLE_TEXT, 0);
         isUpdate = headerText == R.string.duress_pwd_action_update;
         layout.setHeaderText(headerText);
         adjustDescriptionStyle(layout);

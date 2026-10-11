@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import androidx.preference.Preference;
 
 import com.android.settings.core.BasePreferenceController;
-import com.android.settings.ext.ExtSettingControllerHelper;
 import com.android.settings.security.DuressPasswordMainActivity;
 
 public class DuressPasswordPrefController extends BasePreferenceController {
@@ -18,7 +17,9 @@ public class DuressPasswordPrefController extends BasePreferenceController {
 
     @Override
     public int getAvailabilityStatus() {
-        return ExtSettingControllerHelper.getGlobalSettingAvailability(mContext);
+        // Mirrors GrapheneOS ExtSettingControllerHelper.getGlobalSettingAvailability():
+        // duress credentials are stored for the system user only.
+        return mContext.getUser().isSystem() ? AVAILABLE : DISABLED_FOR_USER;
     }
 
     @Override

@@ -19,10 +19,6 @@ import com.google.android.setupdesign.items.Item;
 import com.google.android.setupdesign.items.ItemGroup;
 import com.google.android.setupdesign.items.RecyclerItemAdapter;
 
-import java.util.Objects;
-
-import static java.util.Objects.requireNonNull;
-
 public class DuressPasswordMainActivity extends DuressPasswordActivity implements RecyclerItemAdapter.OnItemSelectedListener {
     private static final String TAG = DuressPasswordMainActivity.class.getSimpleName();
     private static final String KEY_USER_CREDENTIAL = "user_credential";
@@ -47,7 +43,7 @@ public class DuressPasswordMainActivity extends DuressPasswordActivity implement
 
         if (savedInstanceState != null) {
             userCredential = savedInstanceState.getParcelable(KEY_USER_CREDENTIAL, LockscreenCredential.class);
-            askedForUserCredentials = requireNonNull(savedInstanceState.getBoolean2(KEY_HAS_ASKED_FOR_USER_CREDENTIALS));
+            askedForUserCredentials = savedInstanceState.getBoolean(KEY_HAS_ASKED_FOR_USER_CREDENTIALS);
         }
     }
 
