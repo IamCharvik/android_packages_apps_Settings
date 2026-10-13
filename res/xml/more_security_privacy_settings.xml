@@ -105,6 +105,14 @@
             settings:controller=
                 "com.android.settings.privacy.CameraExtensionsFallbackPreferenceController" />
 
+        <!-- Deny internet access to newly installed apps -->
+        <SwitchPreferenceCompat
+            android:key="restrict_internet_new_apps"
+            android:title="@string/restrict_internet_new_apps_title"
+            settings:keywords="@string/restrict_internet_new_apps_title"
+            settings:controller=
+                "com.android.settings.privacy.RestrictInternetNewAppsPreferenceController" />
+
         <!-- Content Capture -->
         <!-- NOTE: content capture has a different preference, depending whether or not the
              ContentCaptureService implementations defines a custom settings activitiy on its manifest.
